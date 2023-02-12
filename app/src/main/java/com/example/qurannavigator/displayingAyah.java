@@ -66,7 +66,29 @@ public class displayingAyah extends AppCompatActivity {
         }
         else
         {
+            try {
+                JSONObject obj=new JSONObject(loadJson());
+                JSONArray array=obj.getJSONArray("data");
+                for (int i=0;i<array.length();i++)
+                {
+                    JSONObject sbj=array.getJSONObject(i);
+                    if(sbj.getString("surah_name").equals(name))
+                    {
 
+                        ayas a=new ayas();
+                        a.setJuz(Integer.valueOf(sbj.getString("juz")));
+                        a.setSurahName(sbj.getString("surah_name"));
+                        a.setText(sbj.getString("text"));
+                        dataHolder.add(a);
+                    }
+
+
+                }
+
+            } catch (JSONException e)
+            {
+
+            }
         }
 
 

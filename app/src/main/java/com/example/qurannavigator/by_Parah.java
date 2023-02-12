@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,6 +25,7 @@ public class by_Parah extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     String selectedFormt;
     ArrayList<String> surahs;
+    TextView heading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class by_Parah extends AppCompatActivity {
         recycle.setLayoutManager(layoutManager);
         if(selectedFormt.equals("parah"))
         {
+            heading.setText("Select any Parah/Juzz to naviagate through parah");
             for (int i=0;i<30;i++)
             {
                 selection s1=new selection();
@@ -49,6 +52,7 @@ public class by_Parah extends AppCompatActivity {
         }
         else
         {
+            heading.setText("Select any Aya to naviagate");
             try{
                 JSONObject obj=new JSONObject(loadJson());
                 JSONArray array=obj.getJSONArray("data");
