@@ -12,13 +12,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Library"
+        android:text="Quran Navigator"
         android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read to explore more"
+        android:text="Navigate on Your own ease"
         android:textColor="@color/white"
         android:background="@color/black"
         android:textSize="20sp" />

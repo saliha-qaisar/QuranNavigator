@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +22,7 @@ public class displayingAyah extends AppCompatActivity {
     ArrayList<ayas> dataHolder;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
+    TextView heading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +37,11 @@ public class displayingAyah extends AppCompatActivity {
         dataHolder=new ArrayList<>();
         layoutManager = new LinearLayoutManager(displayingAyah.this);
         recycle.setLayoutManager(layoutManager);
-
+        heading=findViewById(R.id.displayingHeader);
 
         if(format.equals("parah"))
         {
+            heading.setText("Ayas of Parah number "+number);
             try {
                 JSONObject obj=new JSONObject(loadJson());
                 JSONArray array=obj.getJSONArray("data");
@@ -66,6 +69,7 @@ public class displayingAyah extends AppCompatActivity {
         }
         else
         {
+            heading.setText("Ayas of Surah "+name);
             try {
                 JSONObject obj=new JSONObject(loadJson());
                 JSONArray array=obj.getJSONArray("data");

@@ -34,13 +34,14 @@ public class by_Parah extends AppCompatActivity {
         Intent intent = getIntent();
         selectedFormt = intent.getStringExtra("format");
         recycle=(RecyclerView)findViewById(R.id.recyclerView);
+        heading=findViewById(R.id.selectorHeader);
         dataHolder=new ArrayList<>();
         surahs=new ArrayList<>() ;
         layoutManager = new LinearLayoutManager(by_Parah.this);
         recycle.setLayoutManager(layoutManager);
         if(selectedFormt.equals("parah"))
         {
-//            heading.setText("Select any Parah/Juzz to naviagate through parah");
+            heading.setText("Select any Parah/Juzz to naviagate through parah");
             for (int i=0;i<30;i++)
             {
                 selection s1=new selection();
@@ -52,7 +53,7 @@ public class by_Parah extends AppCompatActivity {
         }
         else
         {
-//            heading.setText("Select any Aya to naviagate");
+            heading.setText("Select any Aya to naviagate");
             try{
                 JSONObject obj=new JSONObject(loadJson());
                 JSONArray array=obj.getJSONArray("data");
