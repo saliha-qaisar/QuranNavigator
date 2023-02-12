@@ -55,9 +55,9 @@ public class by_Parah extends AppCompatActivity {
                 for (int i=0;i<array.length();i++)
                 {
                     JSONObject sbj=array.getJSONObject(i);
-                    if(!surahs.contains(sbj.getString("englishName")))
+                    if(!surahs.contains(sbj.getString("surah_name")))
                     {
-                        surahs.add(sbj.getString("englishName"));
+                        surahs.add(sbj.getString("surah_name"));
 
                     }
 

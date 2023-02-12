@@ -13,6 +13,13 @@
         android:theme="@style/Theme.QuranNavigator"
         tools:targetApi="31">
         <activity
+            android:name=".myRecyclerViewAdapterDisplay"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".displayingAyah"
             android:exported="false">
             <meta-data

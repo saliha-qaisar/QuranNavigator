@@ -73,19 +73,17 @@ public class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAd
             int position=this.getAdapterPosition();
             selection data=logs.get(position);
             android.util.Log.d("Clicked",""+data);
-            String id= String.valueOf(data.format);
-            String name=data.name;
+            String format= (data.format);
             Integer number=data.number;
+            android.util.Log.d("Clicked","RecyleView"+number);
+            String name= data.name;
 
 
-//            Intent intent = new Intent(context,Edit.class);
-//            intent.putExtra("name", name);
-//            intent.putExtra("id", id);
-//            intent.putExtra("sabaq", sabaq);
-//            intent.putExtra("sabqi", sabqi);
-//            intent.putExtra("manzil", manzil);
-//            intent.putExtra("date", date);
-//            context.startActivity(intent);
+            Intent intent = new Intent(context,displayingAyah.class);
+            intent.putExtra("name", name);
+            intent.putExtra("format", format);
+            intent.putExtra("number",number.toString());
+            context.startActivity(intent);
 
         }
 
