@@ -63,6 +63,14 @@ public class by_Parah extends AppCompatActivity {
 
 
                 }
+                for (String i : surahs)
+                {
+                    selection s1=new selection();
+                    s1.format="surah";
+                    s1.name= i;
+                    dataHolder.add(s1);
+
+                }
 
                 Log.d("array","lenth"+surahs.size());
 
